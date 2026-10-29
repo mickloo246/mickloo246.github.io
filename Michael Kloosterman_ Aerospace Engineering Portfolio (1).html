@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michael Kloosterman: Aerospace Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F7FA;--panel:#FFFFFF;--ink:#16202E;--muted:#59667A;--line:#D8DEE8;--navy:#12294D;--accent:#14707F;--accent-ink:#0E5663;--soft:#E7EEF4;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1624;--panel:#142033;--ink:#E8EDF4;--muted:#9AA8BC;--line:#26364D;--navy:#9CC3E8;--accent:#4FC3D4;--accent-ink:#7ED6E3;--soft:#1B2B42}}
+:root[data-theme="dark"]{--bg:#0D1624;--panel:#142033;--ink:#E8EDF4;--muted:#9AA8BC;--line:#26364D;--navy:#9CC3E8;--accent:#4FC3D4;--accent-ink:#7ED6E3;--soft:#1B2B42}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Gelasio,Georgia,"Times New Roman",serif;font-size:1.0625rem;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:var(--accent-ink)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:56px}
+.nav b{font-size:1rem;white-space:nowrap}
+.nav nav{display:flex;gap:1.25rem;overflow-x:auto;scrollbar-width:none}
+.nav nav a{color:var(--muted);text-decoration:none;font-size:.9rem;white-space:nowrap}
+.nav nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px}
+
+.hero{padding:4.5rem 0 2rem}
+.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);line-height:1;margin:0 0 1rem;color:var(--navy);letter-spacing:-.02em}
+.hero p.lede{font-size:1.3rem;color:var(--muted);max-width:34rem;margin:0 0 2rem;font-style:italic}
+.sky{width:100%;height:auto;display:block;margin-top:1rem;color:var(--muted)}
+.sky .s{fill:currentColor;opacity:.45}
+.sky .ship{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linejoin:round;opacity:.85}
+.sky .det{fill:none;stroke:var(--accent);stroke-width:1;opacity:.45}
+.cap{font-size:.85rem;color:var(--muted);margin:.5rem 0 0}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:1.9rem;line-height:1.15;margin:0 0 1.5rem;color:var(--navy)}
+h3{font-size:1.25rem;line-height:1.25;margin:0 0 .25rem;color:var(--navy)}
+.sum p{font-size:1.2rem;line-height:1.75;max-width:40rem;margin:0}
+.meta{font-size:.9rem;color:var(--muted);font-style:italic;margin:0 0 .75rem}
+ul{margin:.5rem 0 0;padding-left:1.2rem}li{margin:.2rem 0}
+.wh{margin:0 0 .5rem}.wh b{color:var(--accent-ink)}
+
+/* blue origin */
+.feature{background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--accent);padding:1.75rem}
+ol.steps{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+ol.steps li{border-top:5px solid var(--line);padding-top:.5rem;font-size:.9rem;line-height:1.35;margin:0;color:var(--muted)}
+ol.steps li b{display:block;color:var(--ink)}
+ol.steps li.done{border-top-color:var(--navy)}ol.steps li.now{border-top-color:var(--accent)}ol.steps li.now b{color:var(--accent-ink)}
+@media(max-width:640px){ol.steps{grid-template-columns:1fr 1fr}}
+
+/* project rows */
+.row{display:grid;grid-template-columns:15rem 1fr;gap:1.5rem 2.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0;padding-top:0}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.chip{background:var(--soft);color:var(--navy);font-size:.8rem;padding:.1rem .65rem;border-radius:999px}
+.row .side .meta{margin:0}
+.big{border:1px solid var(--line);background:var(--panel);padding:1.75rem}
+
+/* experience */
+.job{padding-left:1.25rem;border-left:2px solid var(--line);margin-bottom:1.75rem;position:relative}
+.job::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.job .top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+.job .top span{font-size:.9rem;color:var(--muted)}
+
+dl.skills{display:grid;grid-template-columns:11rem 1fr;gap:.75rem 1.5rem;margin:0}
+dl.skills dt{font-weight:700;color:var(--navy)}dl.skills dd{margin:0}
+@media(max-width:600px){dl.skills{grid-template-columns:1fr;gap:0}dl.skills dd{margin-bottom:.75rem}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+
+footer{background:var(--navy);color:#F2F5FA;padding:3.5rem 0 calc(3rem + env(safe-area-inset-bottom,0px))}
+footer h2{color:#fff;margin-bottom:.5rem}footer p{margin:0 0 1.25rem;max-width:34rem}
+footer .links{display:flex;flex-wrap:wrap;gap:.75rem}
+footer .links a{color:#fff;border:1px solid rgba(255,255,255,.45);padding:.55rem 1.1rem;text-decoration:none;font-size:.95rem}
+footer .links a:hover{background:rgba(255,255,255,.12)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#0A111C}}
+:root[data-theme="dark"] footer{background:#0A111C}
+</style></head><body>
+
+<header class="nav"><div class="wrap"><b>Michael Kloosterman</b>
+<nav aria-label="Sections"><a href="#about">About</a><a href="#blue-origin">Blue Origin</a><a href="#class-projects">Class projects</a><a href="#projects">Personal projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<div class="wrap">
+<div class="hero">
+  <h1>Michael Kloosterman</h1>
+  <p class="lede">Aerospace engineering student at the University of Michigan. Minor in electrical engineering.</p>
+  <svg class="sky" viewBox="0 0 800 160" role="img" aria-label="Line drawing of a Republic Venator flying through a starfield"><g class="s"><circle cx="40" cy="30" r="1.5"/><circle cx="95" cy="128" r="1"/><circle cx="160" cy="18" r="1.2"/><circle cx="260" cy="142" r="1.5"/><circle cx="330" cy="22" r="1"/><circle cx="420" cy="140" r="1.2"/><circle cx="515" cy="16" r="1.5"/><circle cx="590" cy="146" r="1"/><circle cx="680" cy="26" r="1.2"/><circle cx="735" cy="120" r="1.5"/><circle cx="775" cy="58" r="1"/><circle cx="20" cy="96" r="1"/></g><polygon class="ship" points="660,80 560,66 250,34 190,46 214,80 190,114 250,126 560,94"/><line class="det" x1="214" y1="80" x2="660" y2="80"/><rect class="det" x="340" y="62" width="150" height="36"/><line class="det" x1="340" y1="80" x2="490" y2="80"/><line class="det" x1="250" y1="34" x2="250" y2="126"/><polygon class="ship" points="236,70 292,74 292,86 236,90"/><line class="ship" x1="292" y1="80" x2="312" y2="80"/><circle class="det" cx="202" cy="58" r="5"/><circle class="det" cx="202" cy="80" r="5"/><circle class="det" cx="202" cy="102" r="5"/></svg>
+  <p class="cap" style="font-size:.75rem;font-style:italic;opacity:.8">Illustration generated by Claude.</p>
+</div>
+</div>
+
+<section id="about" class="sum"><div class="wrap">
+  <h2>About me</h2>
+  <p>I became obsessed with aerospace before I knew it was called that. I grew up loving Star Wars. My favorite part was the ships, like the Republic Venator, the Star Destroyer, and the Acclamator. Now I study aerospace engineering at Michigan, with a minor in electrical engineering. I like systems, electronics, and spacecraft. I also like learning new tools, from CAD to circuits to code. I am looking for a summer internship where I can build hardware and write embedded code.</p>
+</div></section>
+
+<section id="blue-origin"><div class="wrap">
+  <h2>Featured project</h2>
+  <div class="feature">
+    <h3>Michigan Blue Origin Project: Lunar Permanence</h3>
+    <p class="meta">Embedded Software Lead Engineer, September 2026 to April 2027. A University of Michigan student team partnered with Blue Origin.</p>
+    <p class="wh"><b>What:</b> Our team is designing a way for lunar landing systems to take images of the Moon.</p>
+    <p class="wh"><b>Why:</b> To learn how a real space mission is planned, from first idea to final design.</p>
+    <ol class="steps" aria-label="Project progress">
+      <li class="done"><b>Done</b>Defined the CONOPS</li>
+      <li class="done"><b>Done</b>Defined the requirements</li>
+      <li class="done"><b>Done</b>System Requirements Review (SRR)</li>
+      <li class="now"><b>Now</b>Logical diagrams and trade studies</li>
+      <li><b>Next</b>Preliminary Design Review (PDR)</li>
+    </ol>
+    <ul>
+      <li>Comparing flight software frameworks in a trade study: NASA F Prime and cFS (core Flight System).</li>
+      <li>Building logical diagrams to show how the parts of the system connect.</li>
+      <li>Working toward the INCOSE ASEP systems engineering certification in April 2027.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="class-projects"><div class="wrap">
+  <h2>Class projects</h2>
+  <div class="row"><div class="side"><h3>NACA 2412 airfoil simulation</h3><p class="meta">Tool: Star-CCM+</p></div>
+    <div><p class="wh"><b>What:</b> I ran a CFD simulation of air flowing over a NACA 2412 airfoil.</p><p class="wh"><b>Why:</b> To learn how air moves around a wing and how a wing makes lift.</p></div></div>
+  <div class="row"><div class="side"><h3>3D drone propeller</h3><p class="meta">Tools: Siemens NX, 3D printing</p></div>
+    <div><p class="wh"><b>What:</b> I designed a drone propeller in Siemens NX. Then I printed it.</p><p class="wh"><b>Why:</b> To take a part from a CAD model to a real object I can hold.</p></div></div>
+  <div class="row"><div class="side"><h3>Systems engineering diagrams</h3><p class="meta">Tool: Cameo. For the Blue Origin project.</p></div>
+    <div><p class="wh"><b>What:</b> I made a lot of different diagrams in Cameo. They describe our system from many angles.</p><p class="wh"><b>Why:</b> To map out the whole system, its parts, and its requirements before anything gets built.</p>
+    <div class="chips"><span class="chip">Block definition</span><span class="chip">Activity</span><span class="chip">Use case</span><span class="chip">Requirements matrix</span><span class="chip">And more</span></div></div></div>
+  <div class="row"><div class="side"><h3>Envelope detector</h3><p class="meta">Tools: Analog Discovery 2, breadboard.</p></div>
+    <div><p class="wh"><b>What:</b> I built a circuit that pulls the message out of an AM signal. It uses an OP27 op-amp, a 1N914 diode, a 1 MΩ resistor, and a 47 nF capacitor.</p><p class="wh"><b>Why:</b> To learn how a radio receiver recovers a message, and how a diode behaves.</p>
+    <ul><li>Measured the voltage and current of the diode on the bench</li><li>Made AM signals with a waveform generator and watched the input and output on the scope</li><li>Tested a 1 kHz carrier, a 200 Hz carrier, and a triangle wave message</li></ul></div></div>
+  <div class="row"><div class="side"><h3>Elevator Escape</h3><p class="meta">Team project. Tool: C++.</p></div>
+    <div><p class="wh"><b>What:</b> A terminal game where you send elevators to pick up people before they run out of patience. Our team built it on top of course starter code.</p><p class="wh"><b>Why:</b> Course project to practice C++ and working on a team.</p>
+    <ul><li>I wrote the elevator dispatch logic and the tick-based movement</li><li>I wrote the pickup checks, including direction checks for groups</li><li>I added a hook so an AI player can read the building and make moves</li></ul></div></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Personal projects</h2>
+  <div class="big" style="margin-bottom:2rem;border-left:6px solid var(--accent)">
+    <h3 style="font-size:1.5rem">Motor control and actuation</h3>
+    <p class="meta">July 2026 to present. Arduino Uno, L293D H-bridge, C++.</p>
+    <p class="wh"><b>What:</b> A joystick that controls the speed and direction of a DC motor.</p>
+    <p class="wh"><b>Why:</b> It is my first step toward building a custom quadcopter.</p>
+    <ul><li>I taught myself the basics of motor drivers</li><li>I wrote a piecewise linear function that turns joystick position into motor speed and direction</li><li>I tested it on real hardware, with variable speed and direction switching</li></ul>
+    <p style="margin-bottom:0"><a href="https://github.com/mickloo246/Embedded-Systems-Project" target="_blank" rel="noopener">See the code on GitHub</a></p>
+  </div>
+  <div class="two">
+    <div><h3>PathFinder</h3><p class="meta">Campus of the Future Pitch Competition, semi-finalist, 2026</p>
+      <p class="wh"><b>What:</b> I worked with AI to build a working AI schedule builder. It plans a student’s week based on their strengths, their weaknesses, and their extracurricular activities.</p><p class="wh"><b>Why:</b> To help students use their time well and find clubs and research that fit their schedule.</p>
+      <ul><li>If a student does badly on an exam, it adds more study time for that class</li><li>It suggests research, competitions, and clubs that fit the student’s free time</li><li>An advisor view lets academic advisors review and approve the plan</li></ul></div>
+    <div><h3>Personal finance planner</h3><p class="meta">Tool: C++</p>
+      <p class="wh"><b>What:</b> A small calculator that finds how much internship income I need to hit a savings goal.</p><p class="wh"><b>Why:</b> To plan for tuition, rent, and food costs.</p>
+      <ul><li>It tests four cost scenarios: with or without aid, with or without a car</li><li>It solves for the hourly pay and summer salary I need</li></ul></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="job"><div class="top"><h3>Embedded Software Lead Engineer</h3><span>Sept 2026 to Apr 2027</span></div><p class="meta">Michigan Blue Origin Project, Lunar Permanence. Ann Arbor, MI</p>
+    <ul><li>Student team building lunar imagery capability for landing systems</li><li>Leading the embedded software work, including the flight software framework trade study</li><li>Completed SRR. Working toward PDR</li><li>Training in Siemens NX, Simulink, and finite element analysis</li></ul></div>
+  <div class="job"><div class="top"><h3>Wire Harness Production Engineer Intern</h3><span>May 2026 to Aug 2026</span></div><p class="meta">Re:Build Tekna. Kalamazoo, MI</p>
+    <ul><li>Tested ultrasonic splicing settings over 50+ iterations to set a production baseline</li><li>Wrote work instructions and quality checklists for wire harnesses</li><li>Built 30+ wire harnesses from engineering drawings</li><li>Compared competitor suppliers for a vertical-integration project</li></ul></div>
+  <div class="job"><div class="top"><h3>Operations Engineering Intern</h3><span>May 2025 to Aug 2025</span></div><p class="meta">Mann+Hummel. Portage, MI</p>
+    <ul><li>Programmed Arduino systems to collect operator performance data</li><li>Designed and 3D printed custom tooling in SolidWorks</li><li>Ran time studies to improve cycle time and pass rate</li><li>Fixed a battery housing defect that was stopping the line</li></ul></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Programming</dt><dd>C++, Python, MATLAB, Arduino</dd>
+    <dt>CAD and analysis</dt><dd>Siemens NX, SolidWorks, Simulink, Star-CCM+, Cameo, finite element analysis</dd>
+    <dt>Fabrication</dt><dd>3D printing</dd>
+    <dt>Lab</dt><dd>Oscilloscopes, waveform generators, circuit assembly and testing</dd>
+  </dl>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education and awards</h2>
+  <div class="two">
+    <div><h3>University of Michigan</h3><p class="meta">B.S. Aerospace Engineering, minor in Electrical Engineering. August 2024 to May 2028. GPA 3.4 / 4.0.</p>
+      <p><b>Coursework:</b> Model-Based Systems Engineering, Signals and Systems, Gas Dynamics, Vibrations and Dynamics, Static Structures</p>
+      <p><b>Scholarships:</b> Michigan Achievement, Mara, Clara E., Società Val Trebbia e Val Nure Inc., High on Heroes, Kalamazoo Promise</p></div>
+    <div><h3>Awards</h3><ul><li>Best Communication Concept Prize, MPowered Lunar Rover Pitch Competition (2026)</li><li>Semi-Finalist, Campus of the Future Pitch Competition (2026)</li><li>Winner, Charles Schwab Programming Concepts Final Project (2025)</li><li>State Champion and International Qualifier, DECA (2024)</li></ul>
+      <p><b>Activities:</b> Michigan Run Club (Co-Social Chair), Business+Tech Club, Special Olympics Basketball Volunteer</p></div>
+  </div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>Get in touch</h2>
+  <p>I am looking for a summer internship where I can build hardware and write embedded code. Send me a message.</p>
+  <div class="links"><a href="mailto:mickloo@umich.edu">mickloo@umich.edu</a><a href="https://www.linkedin.com/in/michael-kloosterman-40345431a" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/mickloo246" target="_blank" rel="noopener">GitHub</a><a href="tel:+12696158932">(269) 615-8932</a></div>
+  <p style="margin:1.5rem 0 0;font-size:.9rem;opacity:.8">Ann Arbor, MI</p>
+  <p style="margin:.5rem 0 0;font-size:.8rem;opacity:.65;font-style:italic">Claude was used to generate the graphics and visual design of this site.</p>
+</div></footer>
+
+<script>
+(function(){
+  var W=800,H=160,mid=80,N=1200,c="",u="",l="";
+  for(var i=0;i<=N;i++){
+    var x=i/N*W, m=1+0.5*Math.sin(i/N*Math.PI*3), a=m*52;
+    var y=mid-a*Math.sin(i/N*Math.PI*2*46);
+    c+=(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1);
+    u+=(i?"L":"M")+x.toFixed(1)+" "+(mid-a).toFixed(1);
+    l+=(i?"L":"M")+x.toFixed(1)+" "+(mid+a).toFixed(1);
+  }
+
+})();
+</script>
+</body></html>
